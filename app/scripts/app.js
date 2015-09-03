@@ -3,6 +3,7 @@ angular.module('F1FeederApp.controllers', []);
 angular.module('F1FeederApp', [
   'F1FeederApp.services',
   'F1FeederApp.controllers',
+  'ui.sortable',
   'ngRoute'
 ]).
 config(['$routeProvider', function($routeProvider) {
