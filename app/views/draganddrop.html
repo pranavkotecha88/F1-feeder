@@ -1,0 +1,42 @@
+<div id="left">  
+  <div class="first-dropdown">
+        Select source genre: 
+        <select data-ng-model="selectedDropboxItem"
+                data-ng-options="a for a in subjects" ng-change="dropboxitemselected()">
+        </select>
+    </div>
+    
+    <div ui-sortable="sortableOptions" class="apps-container screen" ng-model="list1">
+      <ul class="app" ng-repeat="app1 in list1">
+        <li>{{$index + 1}} {{app1.title}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="right">
+
+  <div class="second-dropdown">
+        Select destination genre: 
+        <select data-ng-model="targetDropboxItem"
+                data-ng-options="a for a in targets" ng-change="targetselected()">
+        </select>
+  </div>
+
+  <div ui-sortable="sortableOptions" class="apps-container screen" ng-model="list2">
+    <ul class="app" ng-repeat="app2 in list2">
+    	<li>{{$index + 1}} {{app2.title}}<li>
+    </ul>
+  </div>
+</div>
+
+<div ng-show="logButtons()">
+  <button class="btn btn-default" ng-click="logModels()">Save List</button>
+  <button class="btn btn-default" ng-click="clearModels()">Clear List</button>
+  <ul class="list logList">
+    <li ng-repeat="entry in sortingLog" class="logItem">
+      {{entry}}
+    </li>
+  </ul>
+</div>
+  
